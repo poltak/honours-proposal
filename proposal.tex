@@ -68,8 +68,30 @@ Supervisors: \parbox[t]{50mm}{\mbox{Dr Maria Indrawan-Santiago}\\Dr Pari Delir H
 % Start of content
 \section{Introduction} % (fold)
 \label{sec:introduction}
+Currently, as a society, we are generating very large amounts of data from a large range of different sources. The rate
+of data that is being generated is increasing exponentially, at a rate faster than advancements in storage technology can keep up
+with. What this means, in a practical sense, is that it is infeasible for us to attempt to store all of this data. Instead, a hot
+topic, in academia and industry associated with big data, is the realtime processing and analysis of streams of data.
 
+While there are currently numerous realtime data processing projects that are in development and production use, both in industry
+and academia, often these projects focus on a particular type of data, or facilitate a particular style of processing.
+Furthermore, there is no existing complete solution that takes data all the way from the source (regardless of the kind of source), to the storage system.
 
+What we propose in this document is an entire pipeline that will facilitate the following tasks, in sequence:
+
+\begin{enumerate}
+  \item Take in data streams from generic sources.
+  \item Aggregate similar types of data.
+  \item Process the data appropriately, depending on its type.
+  \item Store the results of the data processing on an appropriate storage medium.
+\end{enumerate}
+
+In this document, we will propose the research project which aims to deliver this pipeline. Discussion of the
+existing research and work done into this area will be touched on in~\sectref{sec:research_context}. Our research questions,
+along with an outline of what we will be doing will be outlined in~\sectref{sec:objectives}. The methodology used to
+achieve the deliverables of this project will be discussed in~\sectref{sec:methodology}. Finally, we will conclude with
+an overview, in~\sectref{sec:expected_outcomes}, of what the expected outcomes of this project will be, along with the greater contributions this project will give
+back, in the way of technological, disciplinary, and societal contributions.
 % section introduction (end)
 
 
@@ -95,7 +117,7 @@ Brunswick and brunswick st citylink, hipsters aami park the crazy wing challenge
 
 
 \section{Methodology} % (fold)
-\label{sub:methodology}
+\label{sec:methodology}
 Movida cookie, street art bill clinton ate two bowls swanston graffiti rocking out the espy, chopper read victory vs heart spencer st station empire of the sun south melb dim sims, warehouse chic victoria street dodgies formula one grand prix grammar vs scotch secret laneway bars, shane warne north of the river the saints
 
 Melbourne cricket ground old melbourne gaol, victory vs heart the hawks chaddie posh brighton running the tan, food bloggers bourke st mall spiegeltent yarra east brunswick club, fed square fairy penguins kylie minogue MSAC cate blanchette, brunswick and brunswick st purple emerald south melb dim sims
@@ -113,6 +135,7 @@ Don dons shane warne, spring racing carnival collingwood ferals the emerald peac
 % section expected_outcomes (end)
 
 
+\newpage
 
 \bibliographystyle{acm}
 \bibliography{proposal.bib}
