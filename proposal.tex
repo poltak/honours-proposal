@@ -1,10 +1,12 @@
 \documentclass[a4paper,11pt]{article}
 
 % set up sensible margins (same as for cssethesis)
-\usepackage[paper=a4paper,left=30mm,width=150mm,top=25mm,bottom=25mm]{geometry} 
-\usepackage{natbib} % Use the natbib bibliography and citation package
-\usepackage{setspace} % This is used in the title page
-\usepackage{graphicx} % This is used to load the crest in the title page
+\usepackage[paper=a4paper,left=30mm,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{setspace}               % This is used in the title page
+\usepackage{graphicx}               % This is used to load the crest in the title page
+\usepackage{poltakmacros}           % Personal macros included in file 'poltakmacros.sty'
+\usepackage[font={small}]{caption}
+\usepackage[hidelinks]{hyperref}
 \usepackage{url}
 
 \author{Jonathan Poltak Samosir}
@@ -25,28 +27,28 @@ Monash University}
 
 \vspace*{30mm}
 
-\includegraphics[width=5cm]{obj/MonashCrest.pdf}
+\includegraphics[width=5cm]{img/MonashCrest.pdf}
 
 \vspace*{15mm}
 
 {\large \bfseries
-Research Proposal --- Semester 2, 2014
+Honours Research Proposal --- Semester 2, 2014
 }
 
 \vspace*{10mm}
 
 {\LARGE \bfseries
-[Thesis Title]
+A pipeline for the preprocessing and storage of heterogeneous big data [WORKING TITLE]
 }
 
 \vspace*{20mm}
 
 {\large \bfseries
-Jonathan Poltak Samosir [22713603]
+Jonathan Poltak Samosir [2271 3603]
 
 \vspace*{20mm}
 
-Supervisors: \parbox[t]{50mm}{Dr Maria Indrawan-Santiago\\Dr Pari Delir Haghighi}
+Supervisors: \parbox[t]{50mm}{\mbox{Dr Maria Indrawan-Santiago}\\Dr Pari Delir Haghighi}
 }
 
 \end{center}
