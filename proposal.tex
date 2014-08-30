@@ -296,6 +296,43 @@ of data.
 \section{Expected Outcomes} % (fold)
 \label{sec:expected_outcomes}
 
+The expected outcomes of this project include both technical contributions and
+theoretical contributions; the technical outcomes of the project essentially
+being implementations of the theoretical outcomes.
+
+Our main theoretical contribution will be the realtime processing
+recommendations we produce for specific classes of data. These recommendations
+will recommend specific realtime data processing technologies for use within the
+pipeline to process the given data. Of course, to actually classify the data, we
+need to come up with some classification method. This will be another of our
+theoretical contribution outcomes of this project.
+
+Looking at the project's outcomes in terms of technical contributions, they
+directly relate back to the theoretical contributions. The main technical
+contribution will be NeCTAR template scripts which enable the deployment of the
+pipeline on the NeCTAR cloud. These scripts will be constructed based upon the
+recommendations produced for specific dataset classes.
+
+Relating back to the data classification method, we will also contribute an
+implementation of this so that given datasets can be fed into the system and be
+classified on-the-fly. What we aim to achieve from the implementation of this
+classification method is to have it as a one of the very initial stages of the
+pipeline, where heterogeneous data can be fed in, have its type classified,
+then have a NeCTAR script constructed based upon that data classes' recommended
+processing pipeline.
+
+To summarise, the expected outcomes of this project include the following contributions:
+
+\begin{itemize}
+  \item A classification method for classifying arbitrary datasets.
+  \item An implementation of this classification method for use in the deployed pipelines.
+  \item Recommendations for specific classes of data on how they should be processed in realtime.
+  \item NeCTAR compatible scripts allowing NeCTAR users to deploy the recommended pipelines on the NeCTAR cloud.
+\end{itemize}
+
+All of these contributions will hopefully be assembled together to make a
+complete pipeline generating system for any arbitrary type of data.
+
 % section expected_outcomes (end)
 
 
