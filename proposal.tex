@@ -84,12 +84,12 @@ academia and industry associated with big data, is the realtime processing and a
 There are currently numerous realtime data processing frameworks that are in development and in production use, both in
 industry and academia. Examples of these realtime data processing frameworks include the widely used Storm
 project~\cite{web:Storm} developed at BackType and Twitter, Inc., and also the up-and-coming Spark Streaming
-project~\cite{web:SparkStreaming} developed at UC Berkeley's AMPLab~\cite{web:UCBerkelyAMCLab}, both of which are
-open-source projects. While there are a growing number of these projects being developed, often these projects are
-designed with a particular type of data in mind, or to facilitate a particular type of data processing. For example, the
-before mentioned Spark Streaming project, along with its mother project, Spark~\cite{web:Spark}, was designed for highly parallelised
-data with the use-case in mind of processing data in-memory using highly iterative machine learning algorithms related
-to data analytics~\cite{liu_survey_2014}.
+project~\cite{web:SparkStreaming} developed at UC Berkeley's AMPLab~\cite{web:UCBerkelyAMCLab}, both of which are open-
+source projects. While there are a growing number of these projects being developed, often these projects are designed
+with a particular type of data in mind, or to facilitate a particular type of data processing. For example, the before
+mentioned Spark Streaming project, along with its mother project, Spark~\cite{web:Spark}, was designed for highly
+parallelised data with the use-case in mind of processing data in-memory using highly iterative machine learning
+algorithms related to data analytics~\cite{liu_survey_2014}.
 
 Given these, occasionally ``narrow'', use-cases for existing data stream processing frameworks, challenges are faced in
 supporting the variations in both data types and processing requirements for data processing applications. In this
@@ -108,9 +108,9 @@ tasks, in sequence:
 \end{enumerate}
 
 From this research project, we aim to produce a set of recommendations on choosing the various components of the
-pipeline, along with recommendations on how the components should be interconnected. To complement this, we also aim to produce a design template on the
-deployment of the pipeline in a cloud environment. This will be expanded on in further detail
-in~\sectref{sec:expected_outcomes}.
+pipeline, along with recommendations on how the components should be interconnected. To complement this, we also aim to
+produce a design template on the deployment of the pipeline in a cloud environment. This will be expanded on in further
+detail in~\sectref{sec:expected_outcomes}.
 
 This document will be structured as follows:\\
 Discussion of the existing research and work done into this area will be
@@ -231,9 +231,11 @@ The following research questions will be the main focus of our project:
   \item How can existing data stream processing solutions be used or be altered for use within this pipeline?
 \end{enumerate}
 
-Of course, from these preliminary questions, we will probably have to decompose them into workable units.
+Of course, from these preliminary questions, we will probably have to decompose them into a number of workable units.
 
-Additionally, after answering each of these preliminary research questions, we will want to properly implement the theoretical discoveries from each stage. We do this with the goal of achieving some deployable pipeline that can be then be used in the testing and overall evaluation stages.
+Additionally, after answering each of these preliminary research questions, we will want to properly implement the
+theoretical discoveries from each stage. We do this with the goal of achieving some deployable pipeline that can be then
+be used in the testing and overall evaluation stages.
 
 % subsection research_questions (end)
 
@@ -242,13 +244,18 @@ Additionally, after answering each of these preliminary research questions, we w
 \label{sub:research_aims}
 
 The main aim or goal of this research project is to develop a set of recommendations that can lead to the creation of
-this data stream processing pipeline. The purpose of these recommendations is to define exactly how specific classes of data coming into our pipeline should be processed in realtime. While we do not aim to have a fully usable, production-ready piece of software as a
-deliverable, we want to at least have a proof-of-concept working in the National eResearch Collaboration Tools and Resources
-(NeCTAR) cloud~\cite{web:Nectar}.
+this data stream processing pipeline. The purpose of these recommendations is to define exactly how specific classes of
+data coming into our pipeline should be processed in realtime. While we do not aim to have a fully usable,
+production-ready piece of software as a deliverable, we want to at least have a proof-of-concept working in the National
+eResearch Collaboration Tools and Resources (NeCTAR) cloud~\cite{web:Nectar}.
 
-From these recommendations, we are planning to be able to formulate some NeCTAR compatible scripts that will enable NeCTAR end-users to be able to deploy a specific variation of the pipeline on their NeCTAR instances. The scripts, and the pipelines they produce, will vary in what technologies make up the pipeline for their given use-case. The use-case being the specific class of data that they are attempting to process.
+From these recommendations, we are planning to be able to formulate some NeCTAR compatible scripts that will enable
+NeCTAR end-users to be able to deploy a specific variation of the pipeline on their NeCTAR instances. The scripts, and
+the pipelines they produce, will vary in which technologies make up the pipeline for their given use-case. The use-case
+being the specific class of data that they are attempting to process.
 
-Further detail on the specifics behind these recommendations, NeCTAR scripts, and data classification can be found in~\sectref{sec:expected_outcomes}.
+Further detail on the specifics behind these recommendations, NeCTAR scripts, and data classification can be found
+in~\sectref{sec:expected_outcomes}.
 
 % subsection research_aims (end)
 
@@ -262,11 +269,20 @@ Further detail on the specifics behind these recommendations, NeCTAR scripts, an
 \subsection{Methodology} % (fold)
 \label{sub:methodology}
 
-One of the key parts of our research methodology will be the applied use of the National eResearch Collaboration Tools and Resources cloud (NeCTAR)~\cite{web:Nectar}. Access to this cloud will facilitate the majority of applied work that happens in this project, including the testing of existing big data stream processing technologies along with the evaluation of our project's technical outcomes. It will also serve as the target platform for the implementation and deployment of our pipeline.
+One of the key parts of our research methodology will be the applied use of the National eResearch Collaboration Tools
+and Resources cloud (NeCTAR)~\cite{web:Nectar}. Access to this cloud will facilitate the majority of applied work that
+happens in this project, including the testing of existing big data stream processing technologies along with the
+evaluation of our project's technical outcomes. It will also serve as the target platform for the implementation and
+deployment of our pipeline.
 
-To give a brief overview of NeCTAR, NeCTAR is a \$47 million (AUD) project funded by the Australian government to facilitate Australian eResearch through providing shared Cloud infrastructures, among other facilities~\cite{sinnott_towards_2011}.
+To give a brief overview of NeCTAR, NeCTAR is a \$47 million (AUD) project funded by the Australian government to
+facilitate Australian eResearch through providing shared Cloud infrastructures, among other
+facilities~\cite{sinnott_towards_2011}.
 
-As of writing, we have requested two NeCTAR Cloud instances for this project's use. The instances having 16 shared cores, 6400 hours of processing time, and one terabyte of shared volume storage. Going by initial estimates, these requested resources should suffice for the scope of this research project. These resources are further touched on in~\sectref{sub:special_facilities_required}.
+As of writing, we have requested two NeCTAR Cloud instances for this project's use. The instances having 16 shared
+cores, 6400 hours of processing time, and one terabyte of shared volume storage. Going by initial estimates, these
+requested resources should suffice for the scope of this research project. These resources are further touched on
+in~\sectref{sub:special_facilities_required}.
 
 % subsection methodology (end)
 
@@ -365,52 +381,44 @@ The following is a preliminary estimated timeline of the proposed research proje
 \end{tabular}
 \end{center}
 
-Note that the above is simply a proposed timeline, and it is highly probable that this will be subject to change as
-the project progresses.
+Note that the above is simply a proposed timeline, and it is highly probable that this will be subject to change as the
+project progresses.
 
 % subsection timeline (end)
 
 \subsection{Potential difficulties} % (fold)
 \label{sub:potential_difficulties}
 
-While we believe that most components of this project are very much feasible
-given the time and resources we have allocated so far, we have identified a
-small number of possible difficulties that may be encountered as the project
-progresses. The most obvious difficulty so far that we have identified is the
-possibility of acquiring a substantial amount of data that we can use for both
-testing and during the evaluation stages of the project. As this data will be
-used to test our data classification methods and evaluate our pipeline deployed
-in the cloud, it will need to be diverse. By diverse, what we mean is it must
-display heterogeneity in terms of its type and origin; data from many different
-sources would be ideal.
+While we believe that most components of this project are very much feasible given the time and resources we have been
+allocated so far, we have identified a small number of possible difficulties that may be encountered as the project
+progresses. The most obvious difficulty so far that we have identified is the need to acquire a substantial amount of
+data that we can use for both during the testing and the evaluation stages of the project. As this data will be used to
+test our data classification methods and evaluate our pipeline deployed in the cloud, it will need to be diverse. By
+diverse, what we mean is it must display heterogeneity in terms of its type and origin; data from many different sources
+would be ideal.
 
-Currently we have no concrete leads on the acquisition of this data, although we
-will look into collaboration with other data-based research projects ongoing at
-Monash University. We also are yet to explore freely available data sets, such as the Enron
-corpus email dataset~\cite{klimt2004introducing}, although these may definitely
-be taken into consideration at a later stage in the project in the case that
-data acquisition proves infeasible.
+Currently we have no concrete leads on the acquisition of this data, although we will look into collaboration with other
+data-based research projects ongoing at Monash University. We also are yet to explore freely available data sets, such
+as the Enron corpus email dataset~\cite{klimt2004introducing}, although these may definitely be taken into consideration
+at a later stage in the project in the case that data acquisition proves infeasible.
 
 % subsection potential_difficulties (end)
 
 \subsection{Special facilities required} % (fold)
 \label{sub:special_facilities_required}
 
-As we are aiming to deploy a proof-of-concept of this pipeline, the main special
-facility needed access to is a cloud solution that enables us to install and
-test our pipeline. For this, we have already requested access for what we are
-planning to do in this project on the National eResearch Collaboration Tools and
-Resources (NeCTAR) cloud~\cite{web:Nectar}. This cloud is funded by the
-Australian Government and available to Australian researchers in many different
-disciplines.
+As we are aiming to deploy a proof-of-concept of this pipeline, the main special facility needed access to is a cloud
+solution that enables us to install and test our pipeline. For this, we have already requested access for what we are
+planning to do in this project on the National eResearch Collaboration Tools and Resources (NeCTAR)
+cloud~\cite{web:Nectar}. This cloud is funded by the Australian Government and available to Australian researchers in
+many different disciplines.
 
-With access to this cloud for the duration of this project, we will be able to
-install and perform qualitative comparisons between the numerous realtime data
-processing solutions available as of now. This will assist us in making our
-recommendations for the pipeline based on the classification of particular set
-of data.
+With access to this cloud for the duration of this project, we will be able to install and perform qualitative
+comparisons between the numerous realtime data processing solutions available as of now. This will assist us in making
+our recommendations for the pipeline based on the classification of particular set of data.
 
-This access to cloud resources at NeCTAR will also facilitate our later testing and evaluation stages of the project, where we will be hoping to test the pipeline with real heterogeneous data.
+This access to cloud resources at NeCTAR will also facilitate our later testing and evaluation stages of the project,
+where we will be hoping to test the pipeline with real heterogeneous data.
 
 % subsection special_facilities_required (end)
 
@@ -421,29 +429,23 @@ This access to cloud resources at NeCTAR will also facilitate our later testing 
 \section{Expected Outcomes} % (fold)
 \label{sec:expected_outcomes}
 
-The expected outcomes of this project include both technical contributions and
-theoretical contributions; the technical outcomes of the project essentially
-being implementations of the theoretical outcomes.
+The expected outcomes of this project include both technical contributions and theoretical contributions; the technical
+outcomes of the project essentially being implementations of the theoretical outcomes.
 
-Our main theoretical contribution will be the realtime processing
-recommendations we produce for specific classes of data. These recommendations
-will recommend specific realtime data processing technologies for use within the
-pipeline to process the given data. Of course, to actually classify the data, we
-need to come up with some classification method. This will be another of our
-theoretical contribution outcomes of this project.
+Our main theoretical contribution will be the realtime processing recommendations we produce for specific classes of
+data. These recommendations will recommend specific realtime data processing technologies for use within the pipeline to
+process the given data. Of course, to actually classify the data, we need to come up with some classification method.
+This will be another of our theoretical contribution outcomes of this project.
 
-Looking at the project's outcomes in terms of technical contributions, they
-directly relate back to the theoretical contributions. The main technical
-contribution will be NeCTAR template scripts which enable the deployment of the
-pipeline on the NeCTAR cloud. These scripts will be constructed based upon the
-recommendations produced for specific dataset classes.
+Looking at the project's outcomes in terms of technical contributions, they directly relate back to the theoretical
+contributions. The main technical contribution will be NeCTAR template scripts which enable the deployment of the
+pipeline on the NeCTAR cloud. These scripts will be constructed based upon the recommendations produced for specific
+dataset classes.
 
-Relating back to the data classification method, we will also contribute an
-implementation of this so that given datasets can be fed into the system and be
-classified on-the-fly. What we aim to achieve from the implementation of this
-classification method is to have it as a one of the very initial stages of the
-pipeline, where heterogeneous data can be fed in, have its type classified,
-then have a NeCTAR script constructed based upon that data classes' recommended
+Relating back to the data classification method, we will also contribute an implementation of this so that given
+datasets can be fed into the system and be classified on-the-fly. What we aim to achieve from the implementation of this
+classification method is to have it as a one of the very initial stages of the pipeline, where heterogeneous data can be
+fed in, have its type classified, then have a NeCTAR script constructed based upon that data classes' recommended
 processing pipeline.
 
 To summarise, the expected outcomes of this project include the following contributions:
@@ -455,8 +457,8 @@ To summarise, the expected outcomes of this project include the following contri
   \item NeCTAR compatible scripts allowing NeCTAR users to deploy the recommended pipelines on the NeCTAR cloud.
 \end{itemize}
 
-All of these contributions will hopefully be assembled together to make a
-complete pipeline generating system for any arbitrary type of data.
+All of these contributions will hopefully be assembled together to make a complete pipeline generating system for any
+arbitrary type of data.
 
 % section expected_outcomes (end)
 
