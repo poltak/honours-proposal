@@ -127,7 +127,91 @@ in the way of technological, disciplinary, and societal contributions.
 \section{Research Context} % (fold)
 \label{sec:research_context}
 
+\subsection{Big data} % (fold)
+\label{sub:big_data}
 
+Big data, as explained previously, is becoming commonplace in both industry and academia. Everyday companies are finding
+that they are generating too much data and that their traditional database management system (DMBS) solutions cannot
+scale to the epic proportions needed to handle this data in an efficient and robust manner~\cite{marz2013principles}.
+Hence, companies and academics alike have started looking at alternative solutions designed with the goal of handling
+these massive datasets.
+
+The most popular solution for this problem, up until recently, has been the MapReduce model of programming along with
+some type of scalable distributed storage system~\cite{bifet_mining_2013}. The MapReduce model was started at Google,
+Inc. with their own proprietary implementation along with their proprietary distributed file system, known as the Google
+File System (GFS). Without going into the low-level details of MapReduce and GFS, the use of this solution at Google
+allowed the company to easily handle all the data that was coming into their servers, and perform the necessary
+processing operations that was needed at the time~\cite{ghemawat_google_2003}~\cite{dean_mapreduce:_2008}.
+
+% subsection big_data (end)
+
+\subsection{Apache Hadoop} % (fold)
+\label{sub:apache_hadoop}
+
+From the success of MapReduce usage combined with GFS at Google, the open-source community responded swiftly with the
+development of the Apache Hadoop framework. Hadoop originally offered an open-source implementation of MapReduce and
+their own open-source distributed file system known as the Hadoop Distributed File System
+(HDFS)~\cite{shvachko_hadoop_2010}.
+
+Hadoop soon became the subject of mass-adoption in both industry and academia, being deployed at a fast rate.
+Development of the Hadoop framework also grew at a fast rate, with new applications related to HDFS and MapReduce being
+built on top of Hadoop, greatly benefiting the ecosystem as a whole. Some of these applications grew into widely adopted
+systems in their own right. For example, Hadoop applications such as Apache Pig~\cite{gates_building_2009} and
+Hive~\cite{thusoo_hive_2010} allow for easy querying and manipulation of data stored on HDFS, both coming with the
+addition of their own ``SQL-like'' query languages~\cite{olston_pig_2008}.
+
+Additionally, as further non-MapReduce model applications became of interest to the Hadoop community, Hadoop soon
+developed a further abstraction on top of the underlying resources (in most cases, HDFS). The goal of this was to
+facilitate the development and deployment of many different applications, varying in use-case, which could be run on the
+Hadoop ecosystem, without forcing developers to fit their application into the MapReduce model. This development was
+known as Apache Hadoop YARN: Yet Another Resource Negotiator, which can be thought of as an operating system sitting
+atop of the available Hadoop resources~\cite{vavilapalli_apache_2013}. The abstraction YARN provides facilitated the
+development of much more advanced, and non-MapReduce technologies which have since become widely used parts of the
+Hadoop ecosystem~\cite{harrison_hadoops_2012}.
+
+% subsection apache_hadoop (end)
+
+\subsection{Realtime data processing} % (fold)
+\label{sub:realtime_data_processing}
+
+One of the major limitation of Hadoop, and the MapReduce model in general, soon became obvious: MapReduce was designed
+with the goal of being able to process batches of data, hence, given Hadoop's dominance, batched data processing was the
+focal point of the entire distributed data processing domain~\cite{kamburugamuve_survey_2014}. Essentially, batched data
+processing is where data gets collected first into large enough batches before being processed all-at-once. The point of
+processing in such a way is so there would be less overheads than attempting to process each individual datum as it
+arrives. For a lot of use-cases this was, and still is, fine as there were no other drawbacks apart from a high level of
+latency between the stages of when the data arrives and when it gets processed. However, for other applications, such as
+stock trading, sensor monitoring, and web traffic processing, a more low-latency, realtime solution was
+needed~\cite{kamburugamuve_survey_2014}.
+
+Soon, many solutions, with different use-cases and design goals, were developed in the area of distributed stream
+processing systems (DSPS). Given the Hadoop ecosystem that was already widely adopted, most of these DSPSs were built
+upon the still new YARN layer, ensuring overall compatibility with the Hadoop ecosystem, and the underlying HDFS. Some
+examples of such projects include the beforementioned Apache Storm, currently being used at Twitter,
+Inc.~\cite{toshniwal_stormtwitter_2014}, among many other companies. Also up-and-coming projects, such as Apache Samza
+which is a recently open-sourced project, currently being used in production at LinkedIn Corporation~\cite{web:Samza}.
+
+% subsection realtime_data_processing (end)
+
+\subsection{The future} % (fold)
+\label{sub:the_future}
+
+While the overall area of big data processing has definitely been moving at a very fast pace in the last decade, the
+area focused on realtime big data processing is still relatively young and shows much potential for further growth in
+the way of research. As of writing, there are a considerable amount DSPS technologies available and in active
+development, and are fast gaining adoption in industry.
+
+While many of the DSPS technologies available offer much needed realtime data processing functionality, it is rather
+confusing for the end-user to differentiate between which of the technologies would be best given their specific
+use-case and the class of data they are working with. There has recently been an attempt at introducing a DSPS-agnostic
+architecture, known as the Lambda architecture~\cite{marz2013principles}, that is currently gaining traction in the
+academic community~\cite{islam_cloud_2014}~\cite{liu_survey_2014}.
+
+We propose looking into the Lambda architecture, and similar attempts, as inspirations for our system that will allow
+for processing recommendations for given data classes and dynamic construction of a heterogeneous data processing
+pipeline.
+
+% subsection the_future (end)
 
 % section research_context (end)
 
