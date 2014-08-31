@@ -143,10 +143,13 @@ The following research questions will be the main focus of our project:
 
 \begin{enumerate}
   \item What classification methods can we best use to classify arbitrary data?
-  \item How the data arriving in the pipeline be preprocessed and structured to adhere to the interface of the appropriate
-   storage system?
+  \item How can we formulate processing recommendations based upon the specific class of data identified for a particular dataset?
   \item How can existing data stream processing solutions be used or be altered for use within this pipeline?
 \end{enumerate}
+
+Of course, from these preliminary questions, we will probably have to decompose them into workable units.
+
+Additionally, after answering each of these preliminary research questions, we will want to properly implement the theoretical discoveries from each stage. We do this with the goal of achieving some deployable pipeline that can be then be used in the testing and overall evaluation stages.
 
 % subsection research_questions (end)
 
@@ -155,9 +158,13 @@ The following research questions will be the main focus of our project:
 \label{sub:research_aims}
 
 The main aim or goal of this research project is to develop a set of recommendations that can lead to the creation of
-this data stream processing pipeline. While we do not aim to have a fully usable, production-ready piece of software as a
+this data stream processing pipeline. The purpose of these recommendations is to define exactly how specific classes of data coming into our pipeline should be processed in realtime. While we do not aim to have a fully usable, production-ready piece of software as a
 deliverable, we want to at least have a proof-of-concept working in the National eResearch Collaboration Tools and Resources
 (NeCTAR) cloud~\cite{web:Nectar}.
+
+From these recommendations, we are planning to be able to formulate some NeCTAR compatible scripts that will enable NeCTAR end-users to be able to deploy a specific variation of the pipeline on their NeCTAR instances. The scripts, and the pipelines they produce, will vary in what technologies make up the pipeline for their given use-case. The use-case being the specific class of data that they are attempting to process.
+
+Further detail on the specifics behind these recommendations, NeCTAR scripts, and data classification can be found in~\sectref{sec:expected_outcomes}.
 
 % subsection research_aims (end)
 
@@ -175,7 +182,7 @@ One of the key parts of our research methodology will be the applied use of the 
 
 To give a brief overview of NeCTAR, NeCTAR is a \$47 million (AUD) project funded by the Australian government to facilitate Australian eResearch through providing shared Cloud infrastructures, among other facilities~\cite{sinnott_towards_2011}.
 
-As of writing, we have requested two NeCTAR Cloud instances for this project's use. The instances having 16 shared cores, 6400 hours of processing time, and one terabyte of shared volume storage. This should be enough resource-wise
+As of writing, we have requested two NeCTAR Cloud instances for this project's use. The instances having 16 shared cores, 6400 hours of processing time, and one terabyte of shared volume storage. Going by initial estimates, these requested resources should suffice for the scope of this research project. These resources are further touched on in~\sectref{sub:special_facilities_required}.
 
 % subsection methodology (end)
 
