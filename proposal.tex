@@ -226,7 +226,7 @@ pipeline.
 The following research questions will be the main focus of our project:
 
 \begin{enumerate}
-  \item What classification methods can we best use to classify arbitrary data?
+  \item What classification methods can we use to best classify arbitrary types of data?
   \item How can we formulate processing recommendations based upon the specific class of data identified for a particular dataset?
   \item How can existing data stream processing solutions be used or be altered for use within this pipeline?
 \end{enumerate}
@@ -243,19 +243,28 @@ be used in the testing and overall evaluation stages.
 \subsection{Research aims} % (fold)
 \label{sub:research_aims}
 
-The main aim or goal of this research project is to develop a set of recommendations that can lead to the creation of
-this data stream processing pipeline. The purpose of these recommendations is to define exactly how specific classes of
-data coming into our pipeline should be processed in realtime. While we do not aim to have a fully usable,
-production-ready piece of software as a deliverable, we want to at least have a proof-of-concept working in the National
-eResearch Collaboration Tools and Resources (NeCTAR) cloud~\cite{web:Nectar}.
+The main aim or goal of this research project is to develop a set of recommendations that define exactly how certain
+types, or classes, of data should be processed. These recommendations can then be used to specify particular software
+that can be used to make up a realtime data processing pipeline. The purpose of the pipeline being to take data from
+arbitrary sources, process it in some specified way, then store the needed results on some storage medium~\eg{}, HDFS.
 
-From these recommendations, we are planning to be able to formulate some NeCTAR compatible scripts that will enable
-NeCTAR end-users to be able to deploy a specific variation of the pipeline on their NeCTAR instances. The scripts, and
-the pipelines they produce, will vary in which technologies make up the pipeline for their given use-case. The use-case
-being the specific class of data that they are attempting to process.
+Relating back to the first research question, to achieve the goal of developing a set of processing recommendations for
+specific classes of data, we first aim to discover and implement some kind of classification technique for the purpose of
+classifying different types of data. To implement the entire pipeline, this classification stage will need to happen early
+on, hence will be one of our first aims we attempt to satisfy.
 
-Further detail on the specifics behind these recommendations, NeCTAR scripts, and data classification can be found
-in~\sectref{sec:expected_outcomes}.
+By the end of the project, we aim to have a proof-of-concept implementation of the pipeline working on the National
+eResearch Collaboration Tools and Resources (NeCTAR) cloud~\cite{web:Nectar}. Further details regarding NeCTAR can be
+found in~\sectref{sub:methodology} and~\sectref{sub:special_facilities_required}. Further details can be found on the
+implementation of the pipeline in~\sectref{sec:expected_outcomes}.
+
+We aim to be able to automate the formulation of some NeCTAR-compatible scripts, based on the data processing
+recommendations. These scripts will be generated with the aim of enabling NeCTAR end-users to be able to deploy a
+specific variation of the pipeline on their NeCTAR instances. The scripts, and the pipelines they produce, will vary in
+which technologies make up the pipeline for their given use-case. The use-case being the specific class of data that
+they are attempting to process.
+
+Further detail on the project deliverables based upon these aims can be found in~\sectref{sec:expected_outcomes}.
 
 % subsection research_aims (end)
 
