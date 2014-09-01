@@ -228,7 +228,7 @@ The following research questions will be the main focus of our project:
 \begin{enumerate}
   \item What classification methods can we use to best classify arbitrary types of data?
   \item How can we formulate processing recommendations based upon the specific class of data identified for a particular dataset?
-  \item How can existing data stream processing solutions be used or be altered for use within this pipeline?
+  \item How can existing data stream processing solutions be used or be altered for use within our project?
 \end{enumerate}
 
 Of course, from these preliminary questions, we will probably have to decompose them into a number of workable units.
@@ -236,6 +236,8 @@ Of course, from these preliminary questions, we will probably have to decompose 
 Additionally, after answering each of these preliminary research questions, we will want to properly implement the
 theoretical discoveries from each stage. We do this with the goal of achieving some deployable pipeline that can be then
 be used in the testing and overall evaluation stages.
+
+Note that the methodology behind how we are going to answer these questions is given in~\sectref{sec:methodology}.
 
 % subsection research_questions (end)
 
@@ -255,7 +257,7 @@ on, hence will be one of our first aims we attempt to satisfy.
 
 By the end of the project, we aim to have a proof-of-concept implementation of the pipeline working on the National
 eResearch Collaboration Tools and Resources (NeCTAR) cloud~\cite{web:Nectar}. Further details regarding NeCTAR can be
-found in~\sectref{sub:methodology} and~\sectref{sub:special_facilities_required}. Further details can be found on the
+found in~\sectref{sec:methodology} and~\sectref{sub:special_facilities_required}. Further details can be found on the
 implementation of the pipeline in~\sectref{sec:expected_outcomes}.
 
 We aim to be able to automate the formulation of some NeCTAR-compatible scripts, based on the data processing
@@ -272,11 +274,11 @@ Further detail on the project deliverables based upon these aims can be found in
 
 
 
-\section{Research Design} % (fold)
-\label{sec:research_design}
+\section{Methodology} % (fold)
+\label{sec:methodology}
 
-\subsection{Methodology} % (fold)
-\label{sub:methodology}
+\subsection{Use of NeCTAR cloud services} % (fold)
+\label{sub:use_of_nectar_cloud_services}
 
 One of the key parts of our research methodology will be the applied use of the National eResearch Collaboration Tools
 and Resources cloud (NeCTAR)~\cite{web:Nectar}. Access to this cloud will facilitate the majority of applied work that
@@ -293,7 +295,41 @@ cores, 6400 hours of processing time, and one terabyte of shared volume storage.
 requested resources should suffice for the scope of this research project. These resources are further touched on
 in~\sectref{sub:special_facilities_required}.
 
-% subsection methodology (end)
+% subsection use_of_nectar_cloud_services (end)
+
+\subsection{Data classification method} % (fold)
+\label{sub:data_classification_method}
+
+For the research methodology surrounding the data classification method, we will look at ways of employing various
+statistical classification techniques from the area of machine learning. A quantitative study of different statistical
+classification techniques will have to be performed in the early stages of the project. For this initial study, we may
+look at different classification methods, such as support vector machines, or naive Bayes classifiers, and perform an
+evaluation on the results that they produce, given specific classes of test data.
+
+From preliminary research for this project, we have discovered that there is a rather small set of possible DSPS
+technologies currently available to choose from. Hence, regardless of the number of different classes of data, multiple
+different classes may have to be given the same processing recommendations, effectively limiting the number of data
+classes. This makes the task of employing a data classification method much more simple in the context of this project.
+
+% subsection data_classification_method (end)
+
+\subsection{Data processing recommendations} % (fold)
+\label{sub:data_processing_recommendations}
+
+As stated in our second research question, in~\sectref{sub:research_questions}, we will formulate specific processing
+recommendations for each given class of data. An example of these recommendations would be, for data displaying
+properties of that of belonging to a graph data class, we would recommend the usage of the GraphX abstraction on top of
+the Apache Spark DSPS for processing, given GraphX's suitability for the processing of graph
+data~\cite{DBLP:journals/corr/XinCDGFS14}.
+
+We will provide mappings from specific data classes to processing recommendations, such as is shown in the earlier example.
+
+% subsection data_processing_recommendations (end)
+
+% section methodology (end)
+
+\section{Research Design} % (fold)
+\label{sec:research_design}
 
 \subsection{Proposed thesis chapter headings} % (fold)
 \label{sub:proposed_thesis_chapter_headings}
