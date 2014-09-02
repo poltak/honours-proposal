@@ -235,12 +235,14 @@ pipeline.
 The following research questions will be the main focus of our project:
 
 \begin{enumerate}
-  \item What classification methods can we use to best classify arbitrary types of data?
-  \item How can we formulate processing recommendations based upon the specific class of data identified for a particular dataset?
-  \item How can existing data stream processing solutions be used or be altered for use within our project?
+  \item\label{item:taxonomy} What characteristics of data systems can be identified to develop a data system taxonomy
+  for real time big data processing?
+  \item\label{item:recommendations} How can the taxonomy, stated in~\listref{item:taxonomy}, be utilised to provide a set
+  of recommendations in designing a pipeline of data processing components to support a particular data system's
+  processing requirements?
+  \item\label{item:pipeline} How can the recommendations be used in practice to modify existing data pipelines when
+  requirements change?
 \end{enumerate}
-
-Of course, from these preliminary questions, we will probably have to decompose them into a number of workable units.
 
 Additionally, after answering each of these preliminary research questions, we will want to properly implement the
 theoretical discoveries from each stage. We do this with the goal of achieving some deployable pipeline that can be then
@@ -257,10 +259,10 @@ Note that the methodology behind how we are going to answer these questions is g
 The main aim or goal of this research project is to develop a set of recommendations that define exactly how certain
 types, or classes, of data should be processed. These recommendations can then be used to specify particular software
 that can be used to make up a realtime data processing pipeline. The purpose of the pipeline being to take data from
-arbitrary sources, process it in some specified way, then store the needed results on some storage medium~\eg{}, HDFS.
+arbitrary sources, process it in some specified way, then store the needed results on some storage medium, \eg HDFS.
 
 Relating back to the first research question, to achieve the goal of developing a set of processing recommendations for
-specific classes of data, we first aim to discover and implement some kind of classification technique for the purpose of
+specific classes of data, we first aim to discover and implement a classification model for the purpose of
 classifying different types of data. To implement the entire pipeline, this classification stage will need to happen early
 on, hence will be one of our first aims we attempt to satisfy.
 
