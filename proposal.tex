@@ -364,7 +364,7 @@ The proposed structure of the thesis is as follows:
     \item Definition of terms
     \item Big data in industry and academia
     \item Batch data processing
-    \item Overview of batch data processing technologies
+    \item Overview of Hadoop ecosystem
     \item Realtime data processing
     \item Overview of realtime data processing technologies
     \item Disruptive research in big data
@@ -373,27 +373,27 @@ The proposed structure of the thesis is as follows:
   \item Streaming Data Preprocessing Pipeline Model
   \begin{enumerate}[label*=\arabic*.]
     \item Introduction
-    \item Need for preprocessing pipeline
+    \item Taxonomy of streaming data systems
+    \item Application of taxonomy to build set of recommendations
+    \item Composing recommendations into pipeline
     \item Overview of pipeline
     \item Usage of pipeline
     \item Conclusion
   \end{enumerate}
-  \item Research Method and Implementation
+  \item Implementation
   \begin{enumerate}[label*=\arabic*.]
     \item Introduction
-    \item Chosen research method
-    \item Data classification method
+    \item Implementation environment
+    \item Use cases for implementation
     \item Data processing technologies for pipeline
     \item Implementation of pipeline in NeCTAR cloud
-    \item Formulation of pipeline recommendations
     \item Conclusion
   \end{enumerate}
   \item Discussion and Evaluation
   \begin{enumerate}[label*=\arabic*.]
     \item Introduction
-    \item Further methods for data classification
-    \item Future of big data research
-    \item Evaluation of project
+    \item Performance evaluation
+    \item Discussion
     \item Conclusion
   \end{enumerate}
   \item Conclusion
@@ -491,25 +491,16 @@ outcomes of the project essentially being implementations of the theoretical out
 
 Our main theoretical contribution will be the realtime processing recommendations we produce for specific classes of
 data. These recommendations will recommend specific realtime data processing technologies for use within the pipeline to
-process the given data. Of course, to actually classify the data, we need to come up with some classification method.
-This will be another of our theoretical contribution outcomes of this project.
+process the given data.
 
 Looking at the project's outcomes in terms of technical contributions, they directly relate back to the theoretical
 contributions. The main technical contribution will be NeCTAR template scripts which enable the deployment of the
 pipeline on the NeCTAR cloud. These scripts will be constructed based upon the recommendations produced for specific
 dataset classes.
 
-Relating back to the data classification method, we will also contribute an implementation of this so that given
-datasets can be fed into the system and be classified on-the-fly. What we aim to achieve from the implementation of this
-classification method is to have it as a one of the very initial stages of the pipeline, where heterogeneous data can be
-fed in, have its type classified, then have a NeCTAR script constructed based upon that data classes' recommended
-processing pipeline.
-
 To summarise, the expected outcomes of this project include the following contributions:
 
 \begin{itemize}
-  \item A classification method for classifying arbitrary datasets.
-  \item An implementation of this classification method for use in the deployed pipelines.
   \item Recommendations for specific classes of data on how they should be processed in realtime.
   \item NeCTAR compatible scripts allowing NeCTAR users to deploy the recommended pipelines on the NeCTAR cloud.
 \end{itemize}
