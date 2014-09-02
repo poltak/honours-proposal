@@ -204,22 +204,24 @@ development, and are fast gaining adoption in industry.
 
 While the various DSPS technologies available offer much needed realtime data stream processing functionality, it is
 rather confusing for the end-user to differentiate between which of the technologies would be best given the users'
-specific use-case and the class of data they are working with. Currently, real time data stream processing is presented
-in most of the major DSPS technologies as a collection of steps, such as Apache Storm's topologies being made up of the
-``bolt'' processing step abstraction along with Apache Samza's processing model being made up of their ``task''
-abstractions~\cite{kamburugamuve_survey_2014}. Hence, with the existence of various DSPS technologies within the Hadoop
-ecosystem and elsewhere, and the idea of data stream processing as a collection of processing steps, the DSPS components
-can be set up in a pipeline topology for general data processing. The idea behind this pipeline being that each step
-along the way in the pipeline can be made up of loosely related DSPS technologies, depending on the class of data needed
-to be processed. There is no fixed pipeline; the general model should be DSPS-agnostic.
+specific use-case and the class of data they are working with.
+
+Currently, real time data stream processing is presented in most of the major DSPS technologies as a collection of
+steps. For example, Apache Storm's processing topologies are made up of the ``bolt'' processing step abstraction along
+with Apache Samza's processing model being made up of their ``task'' abstractions~\cite{kamburugamuve_survey_2014}.
+Hence, with the existence of various DSPS technologies within the Hadoop ecosystem and elsewhere, and the idea of data
+stream processing as a collection of processing steps, the DSPS components can be set up in a pipeline topology for
+general data processing. The idea behind this pipeline being that each step along the way in the pipeline can be made up
+of loosely related DSPS technologies, depending on the class of data needed to be processed. There is no fixed pipeline;
+the general model should be DSPS-agnostic.
 
 There has recently been an attempt at introducing a DSPS-agnostic architecture, known as the Lambda
 architecture~\cite{marz2013principles}, that is currently gaining traction in the academic
 community~\cite{islam_cloud_2014}~\cite{liu_survey_2014}.
 
-We propose looking into the Lambda architecture, and similar attempts, as inspirations for our system that will allow
-for processing recommendations for given data classes and the dynamic construction of a heterogeneous data processing
-pipeline.
+We propose looking into the Lambda architecture, and similar attempts, as inspirations for our research project that
+will  produce a set of processing recommendations for given data classes and, from those recommendations, the dynamic
+construction of a heterogeneous data processing pipeline.
 
 % subsection the_future (end)
 
@@ -238,7 +240,7 @@ pipeline.
 The following research questions will be the main focus of our project:
 
 \begin{enumerate}
-  \item\label{item:taxonomy} What characteristics of data systems can be identified to develop a data system taxonomy
+  \item\label{item:taxonomy} What characteristics of data systems can be identified to develop a data class taxonomy
   for real time big data processing?
   \item\label{item:recommendations} How can the taxonomy, stated in~\listref{item:taxonomy}, be utilised to provide a set
   of recommendations in designing a pipeline of data processing components to support a particular data system's
