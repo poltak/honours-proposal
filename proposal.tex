@@ -262,7 +262,7 @@ Note that the methodology behind how we are going to answer these questions is g
 \label{sub:research_aims}
 
 The main aim or goal of this research project is to develop a set of recommendations that define exactly how certain
-types, or classes, of data should be processed. These recommendations can then be used to specify particular software
+types, or classes, of data should be processed. These recommendations can then be used to specify particular DSPS technology
 that can be used to make up a realtime data processing pipeline. The purpose of the pipeline being to take data from
 arbitrary sources, process it in some specified way, then store the needed results on some storage medium, \eg HDFS.
 
@@ -273,13 +273,13 @@ on, hence will be one of our first aims we attempt to satisfy.
 
 By the end of the project, we aim to have a proof-of-concept implementation of the pipeline working on the National
 eResearch Collaboration Tools and Resources (NeCTAR) cloud~\cite{web:Nectar}. Further details regarding NeCTAR can be
-found in~\sectref{sec:methodology} and~\sectref{sub:special_facilities_required}. Further details can be found on the
+found in~\sectref{sub:use_of_nectar_cloud_services} and~\sectref{sub:special_facilities_required}. Further details can be found on the
 implementation of the pipeline in~\sectref{sec:expected_outcomes}.
 
 We aim to be able to automate the formulation of some NeCTAR-compatible scripts, based on the data processing
 recommendations. These scripts will be generated with the aim of enabling NeCTAR end-users to be able to deploy a
 specific variation of the pipeline on their NeCTAR instances. The scripts, and the pipelines they produce, will vary in
-which technologies make up the pipeline for their given use-case. The use-case being the specific class of data that
+which DSPS technologies make up the pipeline for the given use-case. The use-case being for the specific class of data that
 they are attempting to process.
 
 Further detail on the project deliverables based upon these aims can be found in~\sectref{sec:expected_outcomes}.
@@ -319,11 +319,12 @@ in~\sectref{sub:special_facilities_required}.
 \label{sub:data_classification_method}
 
 For the research methodology surrounding the data classification method, we will employ a qualitative classification
-method with the aim of producing a taxonomy of the different classes of data, along with a taxonomy of different classes
-of DSPS technologies. This will allow us to clearly show the requirements needed for processing a specific class of
-data. Similarly, producing a taxonomy for a range of different open-source DSPS technologies, gotten from first
-performing a similar qualitative study, will allow us to show the data requirements for each specific DSPS. This will allow
-the recommendation of specific DSPS technologies for the processing of specific classes of data.
+method with the aim of producing a taxonomy of the different classes of data. This will allow us to clearly show the
+requirements needed for processing each of the specific classes of data. Similarly, producing a taxonomy for a range of
+different open-source DSPS technologies will allow us to show the data requirements for each specific DSPS. The purpose
+of this taxonomy of DSPS technologies being so that we can directly form recommendations for the processing of specific
+classes of data, relating such data classes with specific DSPS technologies that would be best suited for the given
+task.
 
 From preliminary research for this project, we have discovered that there is a rather small set of possible DSPS
 technologies currently available to choose from. Hence, regardless of the number of different classes of data, multiple
@@ -337,9 +338,9 @@ classes. This makes the task of employing a data classification method much more
 
 As stated in~\listref{item:recommendations}, in~\sectref{sub:research_questions}, we will formulate specific processing
 recommendations for each given class of data. An example of these recommendations would be for data displaying
-properties such as those of belonging to a graph data class, we would recommend the usage of the GraphX abstraction on top of
-the Apache Spark DSPS for processing, given GraphX's suitability for the processing of graph
-data~\cite{DBLP:journals/corr/XinCDGFS14}.
+properties such as those of belonging to a graph data class. For this data class, we would recommend the usage of the
+GraphX abstraction on top of the Apache Spark DSPS for processing, given GraphX's suitability for the processing of
+graph data~\cite{DBLP:journals/corr/XinCDGFS14}.
 
 These recommendations will be based directly off the data class and DSPS taxonomies that we will produce, as discussed
 in~\sectref{sub:data_classification_method}.
