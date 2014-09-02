@@ -138,7 +138,7 @@ these massive datasets.
 
 The most popular solution for this problem, up until recently, has been the MapReduce model of programming along with
 some type of scalable distributed storage system~\cite{bifet_mining_2013}. The MapReduce model was started at Google,
-Inc. with their own proprietary implementation along with their proprietary distributed file system, known as the Google
+Inc.\@ with their own proprietary implementation along with their proprietary distributed file system, known as the Google
 File System (GFS). Without going into the low-level details of MapReduce and GFS, the use of this solution at Google
 allowed the company to easily handle all the data that was coming into their servers, and perform the necessary
 processing operations that was needed at the time~\cite{ghemawat_google_2003}~\cite{dean_mapreduce:_2008}.
@@ -164,7 +164,7 @@ Additionally, as further non-MapReduce model applications became of interest to 
 developed a further abstraction on top of the underlying resources (in most cases, HDFS). The goal of this was to
 facilitate the development and deployment of many different applications, varying in use-case, which could be run on the
 Hadoop ecosystem, without forcing developers to fit their application into the MapReduce model. This development was
-known as Apache Hadoop YARN: Yet Another Resource Negotiator, which can be thought of as an operating system sitting
+known as Apache Hadoop YARN:\@ Yet Another Resource Negotiator, which can be thought of as an operating system sitting
 atop of the available Hadoop resources~\cite{vavilapalli_apache_2013}. The abstraction YARN provides facilitated the
 development of much more advanced, and non-MapReduce technologies which have since become widely used parts of the
 Hadoop ecosystem~\cite{harrison_hadoops_2012}.
@@ -174,7 +174,7 @@ Hadoop ecosystem~\cite{harrison_hadoops_2012}.
 \subsection{Realtime data processing} % (fold)
 \label{sub:realtime_data_processing}
 
-One of the major limitation of Hadoop, and the MapReduce model in general, soon became obvious: MapReduce was designed
+One of the major limitations of Hadoop, and the MapReduce model in general, soon became obvious:\@ MapReduce was designed
 with the goal of being able to process batches of data, hence, given Hadoop's dominance, batched data processing was the
 focal point of the entire distributed data processing domain~\cite{kamburugamuve_survey_2014}. Essentially, batched data
 processing is where data gets collected first into large enough batches before being processed all-at-once. The point of
@@ -201,14 +201,23 @@ area focused on realtime big data processing is still relatively young and shows
 the way of research. As of writing, there are a considerable amount DSPS technologies available and in active
 development, and are fast gaining adoption in industry.
 
-While many of the DSPS technologies available offer much needed realtime data processing functionality, it is rather
-confusing for the end-user to differentiate between which of the technologies would be best given their specific
-use-case and the class of data they are working with. There has recently been an attempt at introducing a DSPS-agnostic
-architecture, known as the Lambda architecture~\cite{marz2013principles}, that is currently gaining traction in the
-academic community~\cite{islam_cloud_2014}~\cite{liu_survey_2014}.
+While the various DSPS technologies available offer much needed realtime data stream processing functionality, it is
+rather confusing for the end-user to differentiate between which of the technologies would be best given the users'
+specific use-case and the class of data they are working with. Currently, real time data stream processing is presented
+in most of the major DSPS technologies as a collection of steps, such as Apache Storm's topologies being made up of the
+``bolt'' processing step abstraction along with Apache Samza's processing model being made up of their ``task''
+abstractions~\cite{kamburugamuve_survey_2014}. Hence, with the existence of various DSPS technologies within the Hadoop
+ecosystem and elsewhere, and the idea of data stream processing as a collection of processing steps, the DSPS components
+can be set up in a pipeline topology for general data processing. The idea behind this pipeline being that each step
+along the way in the pipeline can be made up of loosely related DSPS technologies, depending on the class of data needed
+to be processed. There is no fixed pipeline; the general model should be DSPS-agnostic.
+
+There has recently been an attempt at introducing a DSPS-agnostic architecture, known as the Lambda
+architecture~\cite{marz2013principles}, that is currently gaining traction in the academic
+community~\cite{islam_cloud_2014}~\cite{liu_survey_2014}.
 
 We propose looking into the Lambda architecture, and similar attempts, as inspirations for our system that will allow
-for processing recommendations for given data classes and dynamic construction of a heterogeneous data processing
+for processing recommendations for given data classes and the dynamic construction of a heterogeneous data processing
 pipeline.
 
 % subsection the_future (end)
