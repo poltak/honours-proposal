@@ -297,26 +297,6 @@ Further detail on the project deliverables based upon these aims can be found in
 \section{Methodology} % (fold)
 \label{sec:methodology}
 
-\subsection{Use of NeCTAR cloud services} % (fold)
-\label{sub:use_of_nectar_cloud_services}
-
-One of the key parts of our research methodology will be the applied use of the National eResearch Collaboration Tools
-and Resources cloud (NeCTAR)~\cite{web:Nectar}. Access to this cloud will facilitate the majority of applied work that
-happens in this project, including the testing of existing big data stream processing technologies along with the
-evaluation of our project's technical outcomes. It will also serve as the target platform for the implementation and
-deployment of our pipeline.
-
-To give a brief overview of NeCTAR, NeCTAR is a \$47 million (AUD) project funded by the Australian government to
-facilitate Australian eResearch through providing shared Cloud infrastructures, among other
-facilities~\cite{sinnott_towards_2011}.
-
-As of writing, we have requested two NeCTAR Cloud instances for this project's use. The instances having 16 shared
-cores, 6400 hours of processing time, and one terabyte of shared volume storage. Going by initial estimates, these
-requested resources should suffice for the scope of this research project. These resources are further touched on
-in~\sectref{sub:special_facilities_required}.
-
-% subsection use_of_nectar_cloud_services (end)
-
 \subsection{Data classification method} % (fold)
 \label{sub:data_classification_method}
 
@@ -327,6 +307,18 @@ different open-source DSPS technologies will allow us to show the data requireme
 of this taxonomy of DSPS technologies being so that we can directly form recommendations for the processing of specific
 classes of data, relating such data classes with specific DSPS technologies that would be best suited for the given
 task.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.5]{img/taxonomy.png}
+  \caption{Example data class and DSPS taxonomies, along with the mappings between them. Note that for simplification
+  purposes, not all mappings are shown.}
+\label{fig:taxonomy}
+\end{figure}
+
+As can be seen in~\figref{fig:taxonomy}, after we develop taxonomies for the classes of data and DSPS technologies, we
+will attempt to map specific data classes to specific DSPS technologies. This mapping will form the basis of our set of
+processing recommendations. Note that it is possible that different data classes may be mapped to the same DSPS technology.
 
 From preliminary research for this project, we have discovered that there is a rather small set of possible DSPS
 technologies currently available to choose from. Hence, regardless of the number of different classes of data, multiple
@@ -344,10 +336,43 @@ properties such as those of belonging to a graph data class. For this data class
 GraphX abstraction on top of the Apache Spark DSPS for processing, given GraphX's suitability for the processing of
 graph data~\cite{DBLP:journals/corr/XinCDGFS14}.
 
+% TODO: flow diagram of this example
+
 These recommendations will be based directly off the data class and DSPS taxonomies that we will produce, as discussed
 in~\sectref{sub:data_classification_method}.
 
 % subsection data_processing_recommendations (end)
+
+\subsection{Use of NeCTAR cloud services for evaluation} % (fold)
+\label{sub:use_of_nectar_cloud_services}
+
+One of the key parts of our research methodology will be the applied use of the National eResearch Collaboration Tools
+and Resources cloud (NeCTAR)~\cite{web:Nectar}. Access to this cloud will facilitate the majority of applied work that
+happens in this project, including the testing of existing big data stream processing technologies along with the
+evaluation of our project's technical outcomes. It will also serve as the target platform for the implementation and
+deployment of our pipeline.
+
+To give a brief overview of NeCTAR, NeCTAR is a \$47 million (AUD) project funded by the Australian government to
+facilitate Australian eResearch through providing shared Cloud infrastructures, among other
+facilities~\cite{sinnott_towards_2011}.
+
+As of writing, we have acquired two NeCTAR Cloud instances for this project's use. The instances having 16 shared
+cores, 6400 hours of processing time, and one terabyte of shared volume storage. Going by initial estimates, these
+requested resources should suffice for the scope of this research project. These resources are further touched on
+in~\sectref{sub:special_facilities_required}.
+
+Our NeCTAR instances will be used for a range of different tasks relating to testing and evaluation. Initially, we will
+be installing different DSPS technologies on NeCTAR for the qualitative evaluation stage mentioned
+in~\sectref{sub:data_classification_method}. This will be performed with the purpose of producing our taxonomy of DSPS
+technologies. Secondly, we will use NeCTAR to construct instances of our data stream processing pipeline on, using the
+available NeCTAR scripting environment. This will allow us to test the implemented pipeline and perform our final
+evaluation of the resulting implementation.
+
+From this testing and evaluation of our pipeline instances on NeCTAR, we will produce NeCTAR-compatible scripts for the
+purpose of deploying the pipeline on NeCTAR cloud instances. This will allow any NeCTAR user to deploy instances of our
+pipeline on their own account. These scripts are further touched on in~\sectref{sec:expected_outcomes}.
+
+% subsection use_of_nectar_cloud_services (end)
 
 % section methodology (end)
 
