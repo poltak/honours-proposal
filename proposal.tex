@@ -40,13 +40,15 @@ Honours Research Proposal --- Semester 2, 2014
 \vspace*{10mm}
 
 {\LARGE \bfseries
-A pipeline for the preprocessing and storage of heterogeneous big data [WORKING TITLE]
+A study of the Hadoop ecosystem for pipelined realtime data stream processing
 }
 
 \vspace*{20mm}
 
 {\large \bfseries
-Jonathan Poltak Samosir [2271 3603]
+Jonathan Poltak Samosir
+
+[2271 3603]
 
 \vspace*{20mm}
 
@@ -146,8 +148,8 @@ processing operations that was needed at the time~\cite{ghemawat_google_2003}~\c
 
 % subsection big_data (end)
 
-\subsection{Apache Hadoop} % (fold)
-\label{sub:apache_hadoop}
+\subsection{Batch data processing} % (fold)
+\label{sub:apache hadoop}
 
 From the success of MapReduce usage combined with GFS at Google, the open-source community responded swiftly with the
 development of the Apache Hadoop framework. Hadoop originally offered an open-source implementation of MapReduce and
@@ -194,7 +196,7 @@ which is a recently open-sourced project, currently being used in production at 
 
 % subsection realtime_data_processing (end)
 
-\subsection{The future} % (fold)
+\subsection{Future research} % (fold)
 \label{sub:the_future}
 
 While the overall area of big data processing has definitely been moving at a very fast pace in the last decade, the
@@ -245,8 +247,8 @@ The following research questions will be the main focus of our project:
   \item\label{item:recommendations} How can the taxonomy, stated in~\listref{item:taxonomy}, be utilised to provide a set
   of recommendations in designing a pipeline of data processing components to support a particular data system's
   processing requirements?
-  \item\label{item:pipeline} How can the recommendations be used in practice to modify existing data pipelines when
-  requirements change?
+  \item\label{item:pipeline} How can the recommendations be used in practice to create an appropriate instance of a realtime
+  data processing pipeline from existing DSPS technologies?
 \end{enumerate}
 
 Additionally, after answering each of these preliminary research questions, we will want to properly implement the
@@ -374,7 +376,6 @@ The proposed structure of the thesis is as follows:
   \item Literature Review
   \begin{enumerate}[label*=\arabic*.]
     \item Introduction
-    \item Definition of terms
     \item Big data in industry and academia
     \item Batch data processing
     \item Overview of Hadoop ecosystem
@@ -383,7 +384,7 @@ The proposed structure of the thesis is as follows:
     \item Disruptive research in big data
     \item Conclusion
   \end{enumerate}
-  \item Streaming Data Preprocessing Pipeline Model
+  \item Streaming Data Processing Pipeline Model
   \begin{enumerate}[label*=\arabic*.]
     \item Introduction
     \item Taxonomy of streaming data systems
@@ -417,6 +418,7 @@ The proposed structure of the thesis is as follows:
     \item Future research
   \end{enumerate}
   \item Reference List
+  \item Glossary
   \item Appendices
 \end{enumerate}
 
@@ -470,7 +472,7 @@ would be ideal.
 Currently we have no concrete leads on the acquisition of this data, although we will look into collaboration with other
 data-based research projects ongoing at Monash University. We also are yet to explore freely available data sets, such
 as the Enron corpus email dataset~\cite{klimt2004introducing}, although these may definitely be taken into consideration
-at a later stage in the project in the case that data acquisition proves infeasible.
+at a later stage in the project in the case that data acquisition from within Monash University proves infeasible.
 
 % subsection potential_difficulties (end)
 
@@ -478,7 +480,7 @@ at a later stage in the project in the case that data acquisition proves infeasi
 \label{sub:special_facilities_required}
 
 As we are aiming to deploy a proof-of-concept of this pipeline, the main special facility needed access to is a cloud
-solution that enables us to install and test our pipeline. For this, we have already requested access for what we are
+solution that enables us to install and test our pipeline. For this, we have already been granted access for what we are
 planning to do in this project on the National eResearch Collaboration Tools and Resources (NeCTAR)
 cloud~\cite{web:Nectar}. This cloud is funded by the Australian Government and available to Australian researchers in
 many different disciplines.
@@ -488,7 +490,8 @@ comparisons between the numerous realtime data processing solutions available as
 our recommendations for the pipeline based on the classification of particular set of data.
 
 This access to cloud resources at NeCTAR will also facilitate our later testing and evaluation stages of the project,
-where we will be hoping to test the pipeline with real heterogeneous data.
+where we will be hoping to test the pipeline with real heterogeneous data. This is all explained in greater detail
+in~\sectref{sub:use_of_nectar_cloud_services}.
 
 % subsection special_facilities_required (end)
 
@@ -506,7 +509,8 @@ outcomes of the project essentially being implementations of the theoretical out
 
 Our main theoretical contribution will be the realtime processing recommendations we produce for specific classes of
 data. These recommendations will recommend specific realtime data processing technologies for use within the pipeline to
-process the given data.
+process the given data. These recommendations will be sourced from our initial studies into qualitative data classification
+producing the taxonomies of both classes of data, and DSPS technologies, earlier mentioned in~\sectref{sub:data_classification_method}.
 
 Looking at the project's outcomes in terms of technical contributions, they directly relate back to the theoretical
 contributions. The main technical contribution will be NeCTAR template scripts which enable the deployment of the
@@ -516,8 +520,10 @@ dataset classes.
 To summarise, the expected outcomes of this project include the following contributions:
 
 \begin{itemize}
-  \item Recommendations for specific classes of data on how they should be processed in realtime.
-  \item NeCTAR compatible scripts allowing NeCTAR users to deploy the recommended pipelines on the NeCTAR cloud.
+  \item A taxonomy of different classes of data.
+  \item A taxonomy of different DSPS technologies.
+  \item A set of recommendations for specific classes of data, recommending how each class should be processed in realtime.
+  \item NeCTAR-compatible scripts allowing the deployment of the recommended pipeline instances on the NeCTAR cloud.
 \end{itemize}
 
 All of these contributions will hopefully be assembled together to make a complete pipeline generating system for any
