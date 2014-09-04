@@ -85,12 +85,12 @@ academia and industry associated with big data, is the realtime processing and a
 
 There are currently numerous realtime data processing frameworks that are in development and in production use, both in
 industry and academia. Examples of these realtime data processing frameworks include the widely used Storm
-project~\cite{web:Storm} developed at BackType and Twitter, Inc., and also the up-and-coming Spark Streaming
-project~\cite{web:SparkStreaming} developed at UC Berkeley's AMPLab~\cite{web:UCBerkelyAMCLab}, both of which are open-
-source projects. While there are a growing number of these projects being developed, often these projects are designed
+project~\cite{web:Storm}, developed at BackType and Twitter, Inc., and also the up-and-coming Spark Streaming
+project~\cite{web:SparkStreaming}, developed at UC Berkeley's AMPLab~\cite{web:UCBerkelyAMCLab}, both of which are
+open-source projects. While there are a growing number of these projects being developed, often these projects are designed
 with a particular type of data in mind, or to facilitate a particular type of data processing. For example, the before
 mentioned Spark Streaming project, along with its mother project, Spark~\cite{web:Spark}, was designed for highly
-parallelised data with the use-case in mind of processing data in-memory using highly iterative machine learning
+parallelisable data with the use-case in mind of processing data in-memory using highly iterative machine learning
 algorithms related to data analytics~\cite{liu_survey_2014}.
 
 Given these, occasionally ``narrow'', use-cases for existing data stream processing frameworks, challenges are faced in
@@ -143,7 +143,7 @@ The most popular solution for this problem, up until recently, has been the MapR
 some type of scalable distributed storage system~\cite{bifet_mining_2013}. The MapReduce model was started at Google,
 Inc.\@ with their own proprietary implementation along with their proprietary distributed file system, known as the Google
 File System (GFS). Without going into the low-level details of MapReduce and GFS, the use of this solution at Google
-allowed the company to easily handle all the data that was coming into their servers, and perform the necessary
+allowed the company to easily handle all the data that was coming into their servers, including that related to Google Search, and perform the necessary
 processing operations that was needed at the time~\cite{ghemawat_google_2003}~\cite{dean_mapreduce:_2008}.
 
 % subsection big_data (end)
@@ -222,7 +222,7 @@ architecture~\cite{marz2013principles}, that is currently gaining traction in th
 community~\cite{islam_cloud_2014}~\cite{liu_survey_2014}.
 
 We propose looking into the Lambda architecture, and similar attempts, as inspirations for our research project that
-will  produce a set of processing recommendations for given data classes and, from those recommendations, the dynamic
+will  produce a set of processing recommendations for given data classes and, from those recommendations, the
 construction of a heterogeneous data processing pipeline.
 
 % subsection the_future (end)
@@ -279,8 +279,8 @@ found in~\sectref{sub:use_of_nectar_cloud_services} and~\sectref{sub:special_fac
 implementation of the pipeline in~\sectref{sec:expected_outcomes}.
 
 We aim to be able to automate the formulation of some NeCTAR-compatible scripts, based on the data processing
-recommendations. These scripts will be generated with the aim of enabling NeCTAR end-users to be able to deploy a
-specific variation of the pipeline on their NeCTAR instances. The scripts, and the pipelines they produce, will vary in
+recommendations. These scripts will be produced with the aim of enabling NeCTAR end-users to be able to deploy a
+specific variation of the pipeline on their own NeCTAR instances. The scripts, and the pipelines they produce, will vary in
 which DSPS technologies make up the pipeline for the given use-case. The use-case being for the specific class of data that
 they are attempting to process.
 
@@ -320,7 +320,7 @@ As can be seen in~\figref{fig:taxonomy}, after we develop taxonomies for the cla
 will attempt to map specific data classes to specific DSPS technologies. This mapping will form the basis of our set of
 processing recommendations. Note that it is possible that different data classes may be mapped to the same DSPS technology.
 
-From preliminary research for this project, we have discovered that there is a rather small set of possible DSPS
+From preliminary research for this project, we have discovered that there is a relatively small set of possible DSPS
 technologies currently available to choose from. Hence, regardless of the number of different classes of data, multiple
 different classes may have to be given the same DSPS recommendations, effectively limiting the number of data
 classes. This makes the task of employing a data classification method much more simple in the context of this project.
@@ -551,8 +551,8 @@ To summarise, the expected outcomes of this project include the following contri
   \item NeCTAR-compatible scripts allowing the deployment of the recommended pipeline instances on the NeCTAR cloud.
 \end{itemize}
 
-All of these contributions will hopefully be assembled together to make a complete pipeline generating system for any
-arbitrary type of data.
+All of these contributions will be assembled together to make a complete instances of a realtime heterogeneous data
+stream processing pipeline system for many different types of data.
 
 % section expected_outcomes (end)
 
